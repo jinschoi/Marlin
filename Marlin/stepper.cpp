@@ -757,6 +757,9 @@ ISR(TIMER1_COMPA_vect)
       current_block = NULL;
       plan_discard_current_block();
     }
+
+    if (TCNT1 >= OCR1A - 175)
+      TCNT1 = 0;
   }
 }
 
