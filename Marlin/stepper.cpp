@@ -758,8 +758,8 @@ ISR(TIMER1_COMPA_vect)
       plan_discard_current_block();
     }
 
-    if (TCNT1 >= OCR1A - 175)
-      TCNT1 = 0;
+    if (TCNT1 >= OCR1A)
+      TCNT1 = OCR1A - 175;
   }
 }
 
